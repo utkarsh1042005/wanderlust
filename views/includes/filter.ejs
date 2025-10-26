@@ -1,0 +1,80 @@
+
+<div id="filters">
+        <div class="filter">
+          <div><i class="fa-solid fa-fire"></i> </div>
+          <p>Trending</p>
+        </div>
+        <div class="filter">
+          <div><i class="fa-solid fa-star"></i> </div>
+          <p>Top Rated</p>
+        </div>
+        <div class="filter">
+          <div><i class="fa-solid fa-house"></i></i> </div>
+          <p>Villas</p>
+        </div>
+        <div class="filter">
+          <div><i class="fa-solid fa-bed"></i></i> </div>
+          <p>Rooms</p>
+        </div>
+        <div class="filter">
+          <div><i class="fa-solid fa-person-swimming"></i> </div>
+          <p>Swimming Pools</p>
+        </div>
+        <div class="filter">
+          <div><i class="fa-solid fa-mountain-city"></i> </div>
+          <p>Mountains</p>
+        </div>
+        <div class="filter">
+          <div><i class="fa-solid fa-umbrella-beach"></i> </div>
+          <p>Beach</p>
+        </div>  
+          <div class="filter">
+          <div><i class="fa-solid fa-tree"></i> </div>
+          <p>Nature</p>
+        </div>
+        <div class="filter">
+          <div><i class="fa-solid fa-plane-departure"></i> </div>
+          <p>Near Airport</p>
+        </div>
+        <div class="filter">
+          <div><i class="fa-solid fa-campground"></i> </div>
+          <p>Camping</p>
+        </div>
+        <div class="filter">
+          <div><i class="fa-solid fa-cow"></i> </div>
+          <p>Farms</p>
+        </div>
+        <div class="tax-toggle">
+          <div class="form-check-reverse form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+              <label class="form-check-label" for="switchCheckDefault">Display total after Taxes </label>
+          </div>
+        </div>
+    </div>
+    
+   <script>
+    const taxSwitch = document.getElementById("switchCheckDefault");
+
+  taxSwitch.addEventListener("change", () => {
+    const originalPrices = document.getElementsByClassName("original-price");
+    const taxPrices = document.getElementsByClassName("tax-price");
+
+    if (taxSwitch.checked) {
+      //  Show tax price, hide original price
+      for (let i = 0; i < taxPrices.length; i++) {
+        taxPrices[i].style.display = "inline";
+      }
+      for (let i = 0; i < originalPrices.length; i++) {
+        originalPrices[i].style.display = "none";
+      }
+    } else {
+      // Show original price, hide tax price
+      for (let i = 0; i < taxPrices.length; i++) {
+        taxPrices[i].style.display = "none";
+      }
+      for (let i = 0; i < originalPrices.length; i++) {
+        originalPrices[i].style.display = "inline";
+      }
+    }
+  });
+</script>
